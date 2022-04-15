@@ -1,1 +1,1 @@
-# snake
+# snake game using vanilla js
