@@ -1,0 +1,20 @@
+.game {
+    font-family: 'VT323', monospace;
+    font-size: larger;
+    text-align: center;
+    line-height: 1px;;
+}
+.scoreBoard {
+    display: none;
+    align-items: center;
+    line-height: 1px;;
+    text-align: left;
+}
+.board {
+    width: 300px;
+    height: auto;
+    display: none;
+    background-color: rgb(0, 0, 0);
+}
+canvas {
+}
