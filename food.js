@@ -18,6 +18,7 @@ export default class Food {
 
     draw() {
         this.ctx.fillStyle = "#FF4444";
+        if(this.debugFlag == true){console.log(this.fillStyle.color)};
         this.ctx.fillRect(this.x, this.y, this.scale, this.scale);
     }
 }
