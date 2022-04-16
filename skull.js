@@ -15,6 +15,9 @@ this.rightEye = () => {ctx.fillRect(9 * scale, 7 * scale, 2 * scale, 1.7 * scale
 }
 */
 
+
+
+//skull powinien dostac ctx jako parametr lub go stworzyc.
 function Skull (){
 ctx.fillStyle = "rgb(255,255,255";
     //               X            Y            Sx          Sy

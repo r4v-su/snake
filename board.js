@@ -1,7 +1,10 @@
+import Snake from './snake.js';
+import Food from './food.js';
 
 //developer mode :)
-var debugFlag = false;
-var debugInput = document.querySelector('#debugging');
+var debugFlag = false; //powinno byc const
+
+var debugInput = document.querySelector('#debugging'); 
 debugInput.addEventListener('input', () => {
     debugFlag = true;
     debugInput.setAttribute('value', 'true');
@@ -11,7 +14,7 @@ debugInput.addEventListener('input', () => {
 if(debugFlag == true){console.log("'Hello, Snake!")};
 
 //welcomescreen
-var welcomeScreen = document.querySelector('.welcomeScreen');
+var welcomeScreen = document.querySelector('.welcomeScreen'); //const fragment obiektu game
 var startBtn = document.querySelector('.startButton');
 
 var canvas = document.querySelector('.board');
@@ -21,20 +24,21 @@ var score = document.querySelector('.score');
 var ctx = canvas.getContext('2d');
 
 //sizing
-var scale = 5;
-var rows = canvas.height / scale;
-var cols = canvas.width / scale;
+// window.scale = 5; //const stala dla jednej gry
+const scale = 5;
+const rows = canvas.height / scale;
+const cols = canvas.width / scale;
+
+const snake = new Snake({scale, cols, rows, canvas, ctx}); //snake.js
+const food = new Food({scale, cols, rows, ctx, debugFlag: false}); //food.js
 
 //obejcts variables
-var snake = Object;
-var food = Object;
-var skull = Object;
-
+// var snake = Object;
+// var food = Object;
+// var skull = Object;
 
 //make game
 function start(){   
-    snake = new Snake(); //snake.js
-    food = new Food(); //food.js
     food.randomLocation(); //food.js
     let gameSpeed = 200; 
     window.setInterval(() => { //refreshing every
