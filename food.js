@@ -1,14 +1,24 @@
-function Food () {
-    this.x;
-    this.y;
-    
-    this.randomLocation = function() {
-        this.x = (Math.floor(Math.random() * cols - 1) + 1 ) * scale;
-        this.y = (Math.floor(Math.random() * rows - 1) + 1) * scale;
-        if(debugFlag == true){console.log(this)};
+export default class Food {
+
+    constructor({scale, cols, rows, debugFlag, ctx}) {
+        this.scale = scale;
+        this.cols = cols;
+        this.rows = rows;
+        this.debugFlag = debugFlag;
+        this.ctx = ctx;
+        this.x;
+        this.y;
     }
-    this.draw = function() {
-        ctx.fillStyle = "#FF4444";
-        ctx.fillRect(this.x, this.y, scale, scale);
+    
+    randomLocation() {
+        this.x = (Math.floor(Math.random() * this.cols - 1) + 1 ) * this.scale;
+        this.y = (Math.floor(Math.random() * this.rows - 1) + 1) * this.scale;
+        if(this.debugFlag == true){console.log(this)};
+    }
+
+    draw() {
+        this.ctx.fillStyle = "#FF4444";
+        if(this.debugFlag == true){console.log(this.fillStyle.color)};
+        this.ctx.fillRect(this.x, this.y, this.scale, this.scale);
     }
 }
